@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website with Table</title>
+<style>
+  @media print {
+    #details-textarea {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+
+    }
+
+   @media print {
+      .textbox {
+        overflow: visible !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.15.2/docxtemplater.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<body>
+  <h1>IFRS INTERPRETATION</h1>
+  <form>
+  <td>Name</td>
+           
+<td>
+          <input type="text" id="Name-input" name="FirmName" value="N/A">
+</td>
+      
+
+   
+</tr>
+    <tr>
+ 
+<td>Date</td>
+           
+<td>
+          <input type="date" id="Date/Period" name="Date_Period" value="N/A">
+</td>
+      
+  	<!-- Tab links -->
+	<div class="tab">
+		<button class="tablinks" onclick="openTab(event, 'IFRS1')">IFRS1</button>
+		<button class="tablinks" onclick="openTab(event, 'IFRS17')">IFRS17</button>  
+         </div>
+
+  
+<div id="IFRS17" class="tabcontent" style="display: none; color: blue;">
+  <table>
+
+  <tr>
+  <th>Details</th>
+  <td>
+    <textarea id="details-textarea2" class="textbox" rows="5" cols="40" oninput="checkKeywords()"></textarea>
+ </td>
+</tr>
+
+  <tr>
+    <th>Standard</th>
+     <td>
+    <select>
+         <option value="IFRS1 ">IFRS 1: First-time Adoption of International Financial Reporting Standards</option>
+          <option value="IFRS2">IFRS 2 Share-based Payment</option>
+          <option value="IFRS3">IFRS 3 Business Combinations</option>
+          <option value="IFRS4">IFRS 4 Insurance Contracts</option>
+          <option value="IFRS5">IFRS 5 Non-cash Assets Held for Sale and Discontinued Operations</option>
+          <option value="IFRS6">IFRS 6 Exploration for and Evaluation of Mineral Resources</option>
+          <option value="IFRS7">IFRS 7 Financial Instruments: Disclosures</option>
+          <option value="IFRS8">IFRS 8 Operating Segments</option>
+          <option value="IFRS9">IFRS 9 Financial Instruments</option>
+          <option value="IFRS10">IFRS 10 Consolidated Financial Statements</option>
+          <option value="IFRS11">IFRS 11 Joint Arrangements</option>
+          <option value="IFRS12">IFRS 12 Disclosure of Interests in Other Entities</option>
+          <option value="IFRS13">IFRS 13 Fair Value Measurement</option>
+          <option value="IFRS14">IFRS 14 Regulatory Deferral Accounts</option>
+          <option value="IFRS15">IFRS 15 Revenue from Contracts with Customers</option>
+          <option value="IFRS16">IFRS 16 Leases</option>
+          <option value="IFRS17">IFRS 17 Insurance Contracts</option>
+          <option value="IAS1">IAS 1 Presentation of Financial Statements </option>
+          <option value="IAS2">IAS 2 Inventories</option>
+          <option value="IAS7">IAS 7 Statement of Cash Flows</option>
+          <option value="IAS8">IAS 8 Accounting Policies, Changes in Accounting Estimates and Errors</option>
+          <option value="IAS10">IAS 10 Events after the Reporting Period</option>
+          <option value="IAS12">IAS 12 Income Taxes</option>
+          <option value="IAS16">IAS 16 Property, Plant and Equipment</option>
+          <option value="IAS19">IAS 19 Employee Benefits</option>
+          <option value="IAS20">IAS 20 Accounting for Government Grants and Disclosure of Government Assistance</option>
+          <option value="IAS21">IAS 21 The Effects of Changes in Foreign Exchange Rates</option>
+          <option value="IAS23">IAS 23 Borrowing Costs</option>
+          <option value="IAS24">IAS 24 Related Party Disclosures</option>
+          <option value="IAS26">IAS 26 Accounting and Reporting by Retirement Benefit Plans</option>
+          <option value="IAS27">IAS 27 Separate Financial Statements</option>
+          <option value="IAS28">IAS 28 Investments in Associates and Joint Ventures</option>
+          <option value="IAS29">IAS 29 Financial Reporting in Hyperinflationary Economies</option>
+          <option value="IAS32">IAS 32 Financial Instruments: Presentation</option>
+          <option value="IAS33">IAS 33 Earnings per Share</option>
+          <option value="IAS34">IAS 34 Interim Financial Reporting</option>
+          <option value="IAS36">IAS 36 Impairment of Assets</option>
+          <option value="IAS37">IAS 37 Provisions, Contingent Liabilities and Contingent Assets</option>
+          <option value="IAS38">IAS 38 Intangible Assets</option>
+          <option value="IAS39">IAS 39 Financial Instruments: Recognition and Measurement</option>
+          <option value="IAS40">IAS 40 Investment Property</option>
+          <option value="IAS41">IAS 41 Agriculture</option>
+       </select>
+       </td>
+  </tr>
+
+  <tr>
+  <th id ="definition-header">Definition</th>
+  <td>
+    <label for="IFRS17Definition-checkbox-1">
+      <input type="checkbox" id="IFRS17Definition-checkbox-1" name="IFRS17Definition-checkbox-1">
+      ♥A contract where a party (issuer) accepts
+significant insurance risk from another( 
+policyholder) by agreeing to compensate the policyholder if a
+specified uncertain future event (insured event) adversely
+affects the policyholder.    </label>
+  </td>
+</tr>
+
+  <tr>
+  <th>Objective</th>
+  <td>
+    <label for="IFRS2Objective-checkbox-1">
+      <input type="checkbox" id="IFRS17Objective-checkbox-1" name="IFRS17Objective-checkbox-1">
+      ♥Its main aim is to ensure an entity
+provides relevant information that faithfully 
+represents Contracts(Insurance,Reinsurance,Investment & transfer) and their effects.    </label>
+  </td>
+</tr>
+
+  <tr>
+  <th>Scope</th>
+  <td>
+    <div>
+      <label for="IFRS17Scope-checkbox-1">
+        <input type="checkbox" id="IFRS17Scope-checkbox-1" name="IFRS17Scope-checkbox-1">
+        ♥ Applies to Insurance Contracts & their transfers      </label>
+    </div>
+    <div>
+      <label for="IFRS17Scope2-checkbox-2">
+        <input type="checkbox" id="IFRS17Scope2-checkbox-2" name="IFRS17Scope2-checkbox-2">
+        ♥ Applies to Reinsurance Contracts</label>
+    </div>
+    <div>
+      <label for="IFRS17Scope3-checkbox-2">
+        <input type="checkbox" id="IFRS17Scope3-checkbox-2" name="IFRS17Scope3-checkbox-2">
+        ♥ Applies to Investment Contracts 
+         with discretionary participation features.
+      </label>
+    </div>
+  </td>
+</tr>
+   
+  <tr>
+  <th>Recognition</th>
+  <td>
+    <div>
+      <label for="IFRS17Recognition-checkbox-3">
+        <input type="checkbox" id="IFRS17Recognition-checkbox-3" name="IFRS17Recognition-checkbox-3">
+        ♥  Recognise as An Insurance Asset the group of insurance contracts it issues from the
+earliest of (a) Start of Coverage Period (b)Date of 1st Payment
+(c) when the group becomes onerous for Onerous Contracts(Obligation Costs exceed Benefits).    </label>
+    </div>
+    <div>
+      <label for="IFRS17Recognition2-checkbox-4">
+        <input type="checkbox" id="IFRS17Recognition2-checkbox-4" name="IFRS17Recognition2-checkbox-4">
+        ♥ Allocate Insurance acquisition Cashflows to group 
+using a Systematic & rational method unless they are expensed      </label>
+    </div>
+     <div>
+      <label for="IFRS17Recognition3-checkbox-4">
+        <input type="checkbox" id="IFRS17Recognition3-checkbox-4" name="IFRS17Recognition3-checkbox-4">
+        ♥ Recognise as Impairment Loss/Increase in profit Or Loss
+ when a change in circumstances of recoverability 
+of Acquisition cashflows becomes apparant      </label>
+    </div>
+  </td>
+</tr>
+
+  <tr>
+  <th>Measurement</th>
+  <td>
+    <div>
+      <label for="IFRS17Measurement-checkbox-2">
+        <input type="checkbox" id="IFRS17Measurement-checkbox-2" name="IFRS17Measurement-checkbox-2">
+        ♥ On initial recognition,measure the group as total of
+fulfilment cash flows ie ((i)present value of future cash
+outflows minus the pv of the future cash inflows,
+(ii)Time value of money Adjustment,
+(iii)risk adjustment for non-financial risk(compensation for Bearing uncertainity of cashflows)
+ &(iv)contractual service margin( carrying amount of asset/liability
+ representing unearned profit the entity recognises as it provides insurance services))       </label>
+    </div>
+    <div>
+      <label for="IFRS17Measurement2-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement2-checkbox-3" name="IFRS17Measurement2-checkbox-3">
+        ♥ An entity may Estimate future cash flows using Expected values(probability Weighted Mean) then
+allocate resulting fulfilment cash flows to Contract groups 
+& later adjust them using Discount Rates.
+     </label>
+    </div>
+     <div>
+      <label for="IFRS17Measurement3-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement3-checkbox-3" name="IFRS17Measurement3-checkbox-3">
+        ♥ On subsequent measurement, Carrying amount of Group Contracts shall be sum of
+((a)Liability for remaining Coverage[fullfillment cashflows & Contractual Service margins at that date],(b) Liability for Incurred Claims[fullfimmnet cashflows to past service])
+  </label> 
+    </div>
+    <div>
+      <label for="IFRS17Measurement4-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement4-checkbox-3" name="IFRS17Measurement4-checkbox-3">
+        ♥ An Entity may measure Group Contracts using Premium Allocation([
+Liability Carrying Amount=Premiums received-Insurance Acquisition Cashflows±
+Asset derecognition Amounts]) only if
+it would produce a result similar to other methods &
+coverage period for each group contract is 1 year or less.     </label>
+    </div>
+<div>
+      <label for="IFRS17Measurement5-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement5-checkbox-3" name="IFRS17Measurement4-checkbox-3">
+        ♥ An Entity may still subsequently measure Group Contracts
+ using Premium Allocation([
+Liability Carrying Amount=Premiums received-Insurance Acquisition Cashflows+
+Acquisition Cashflows Amortisation+Financial Component Adjustment-
+Insurance Revenue Amount])     </label>
+    </div>
+  </td>
+</tr>
+  
+  <tr>
+  <th>Presentation</th>
+  <td>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation-checkbox-2" name="IFRS17Presentation-checkbox-2">
+      <label for="IFRS17Presentation-checkbox-2">♥Present separately in statement of financial position
+the carrying amount of:(a) Insurance Contract Assets & Liabilities(b)
+Reinsurance Contract Assets & Liabilities</label>
+    </div>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation1-checkbox-5" name="IFRS17Presentation1-checkbox-5">
+      <label for="IFRS17Presentation1-checkbox-5">♥Show Insurance service result & 
+Insurance finance income or expenses in 
+Profit or loss and other comprehensive
+Income seperately for both Insurance & Reinsurance Contracts</label>
+    </div>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation2-checkbox-6" name="IFRS17Presentation2-checkbox-6">
+      <label for="IFRS17Presentation2-checkbox-6">♥Insurance Service Result=Revenue an entity is entitled
+as consideration for provision of services 
+but excludes Investment Components</label>
+    </div>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation3-checkbox-7" name="IFRS17Presentation3-checkbox-7">
+      <label for="IFRS17Presentation3-checkbox-7">♥Insurance finance income or expenses=effect of(
+Financial Risk,Time Value of money and their changes)
+but excludes contracts with direct participation features</label>
+    </div>
+  </td>
+</tr>
+   
+  <tr>
+  <th>Disclosure</th>
+  <td>
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure-checkbox-2" id="IFRS17Disclosure-checkbox-2">
+      <label for="IFRS17Disclosure-checkbox-2">♥Contract Amounts & their Reconciliation in the Notes</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure1-checkbox-9" id="IFRS17Disclosure1-checkbox-9">
+      <label for="IFRS17Disclosure1-checkbox-9">♥Significant Judgements & Changes when applying it</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure2-checkbox-8" id="IFRS17Disclosure2-checkbox-8">
+      <label for="IFRS17Disclosure2-checkbox-8">♥Nature & extent of Risks of Contracts</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure3-checkbox-7" id="IFRS17Disclosure3-checkbox-7">
+      <label for="IFRS17Disclosure3-checkbox-7">♥Aggregation Biases like Contract Types & Geographical areas</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure4-checkbox-10" id="IFRS17Disclosure4-checkbox-10">
+      <label for="IFRS17Disclosure4-checkbox-10">♥inputs,
+assumptions and estimation techniques used.</label>
+    </div>
+  </td>
+</tr>
+  
+  <tr>
+  <th>(Any Other Issue)</th>
+  <td>
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue-checkbox-2" id="IFRS17AnyOtherIssue-checkbox-2">
+      <label for="IFRS17AnyOtherIssue-checkbox-2">♥On Modification by agreement
+between parties to the contract or change in regulation, an entity
+shall derecognise the original contract and 
+recognise the modified contract as
+a new contract.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue1-checkbox-2" id="IFRS17AnyOtherIssue1-checkbox-2">
+      <label for="IFRS17AnyOtherIssue1-checkbox-2">♥An Entity shall derecognise an Insurance Contract when
+Its extinguished,significantly modified
+or it gets reinsurance</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue2-checkbox-2" id="IFRS17AnyOtherIssue2-checkbox-2">
+      <label for="IFRS17AnyOtherIssue2-checkbox-2">♥Disclose Sensitivity Analysis of how the Insurance Risk
+has affected the profit or Loss of the Contract</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue3-checkbox-2" id="IFRS17AnyOtherIssue3-checkbox-2">
+      <label for="IFRS17AnyOtherIssue3-checkbox-2">♥Should Disclose information on
+Credit & liquidity Risk and how it mitigates them.</label>
+    </div>
+  </td>
+</tr> 
+
+    <tr>
+      <th>Conclusion/Decision:</th>
+      <td>
+        <textarea id="conclusion-field2" rows="2" cols="30"></textarea>
+      </td>
+    </tr>
+    
+  </table>
+    
+    <progress id="progress-bar2" value="0" max="0" label for = "APPLICATION"></progress>
+   
+     
+   <td>
+    <button onclick="clearForm2()">Clear Forms</button>
+    <button onclick="printAsPDF2()">Save as PDFs</button>
+
+    </td>
+
+<script>
+function printAsPDF2() {
+  // Set the page to print in landscape orientation
+  var printOptions = {
+    orientation: "landscape"
+  };
+  
+  // Print the current page as a PDF
+  window.print();
+}
+</script>
+ 
+ <script>
+  function checkKeywords() {
+    const detailsTextarea = document.getElementById('details-textarea2');
+    const checkboxes = {
+      definition: document.getElementById('IFRS17Definition-checkbox-1'),
+      objective: document.getElementById('IFRS17Objective-checkbox-1'),
+      scope: document.getElementById('IFRS17Scope-checkbox-1'),
+      scope2: document.getElementById('IFRS17Scope2-checkbox-2'),
+      scope3: document.getElementById('IFRS17Scope3-checkbox-2'),
+      recognition: document.getElementById('IFRS17Recognition-checkbox-3'),
+      recognition2: document.getElementById('IFRS17Recognition2-checkbox-4'),
+      recognition3: document.getElementById('IFRS17Recognition3-checkbox-4'),
+      measurement: document.getElementById('IFRS17Measurement-checkbox-2'),
+      measurement2: document.getElementById('IFRS17Measurement2-checkbox-3'),
+      measurement3: document.getElementById('IFRS17Measurement3-checkbox-3'),
+      measurement4: document.getElementById('IFRS17Measurement4-checkbox-3'),
+      measurement5: document.getElementById('IFRS17Measurement5-checkbox-3'),
+      presentation: document.getElementById('IFRS17Presentation-checkbox-2'),
+      presentation1: document.getElementById('IFRS17Presentation1-checkbox-5'),
+      presentation2: document.getElementById('IFRS17Presentation2-checkbox-6'),
+      presentation3: document.getElementById('IFRS17Presentation3-checkbox-7'),
+      disclosure: document.getElementById('IFRS17Disclosure-checkbox-2'),
+      disclosure1: document.getElementById('IFRS17Disclosure1-checkbox-9'),
+      disclosure2: document.getElementById('IFRS17Disclosure2-checkbox-8'),
+      disclosure3: document.getElementById('IFRS17Disclosure3-checkbox-7'),
+      disclosure4: document.getElementById('IFRS17Disclosure4-checkbox-10'),
+      anyOtherIssue: document.getElementById('IFRS17AnyOtherIssue-checkbox-2'),
+      anyOtherIssue1: document.getElementById('IFRS17AnyOtherIssue1-checkbox-2'),
+      anyOtherIssue2: document.getElementById('IFRS17AnyOtherIssue2-checkbox-2'),
+      anyOtherIssue3: document.getElementById('IFRS17AnyOtherIssue3-checkbox-2'),
+    };
+
+    const keywords = {
+      definition: ['Accepts', 'Uncertain', 'Compensation'],
+      objective: ['Faithfully', 'Represents', 'Transfer'],
+      scope: [ 'Insurance Policy Contracts','Insurance Contracts with their transfers'],
+      scope2: ['Reinsurance Contracts'],
+      scope3: ['Investment contracts', 'features', 'discretionary'],
+      recognition: ['Coverage Period', '1st Payment', 'Onerous'],
+      recognition2: ['Cashflows', 'Systematic', 'Allocate'],
+      recognition3: ['recoverability', 'Impairment', 'apparant'],
+      measurement: ['fulfilment cash flows','Time value of money', 'contractual service margin', 'non-financial risk'],
+      measurement2: ['Estimate', 'Expected values', 'Discount Rates'],
+      measurement3: ['remaining Coverage', 'Incurred Claims'],
+      measurement4: ['produce a result similar', 'Premium Allocation'],
+      measurement5: ['subsequently measure'],
+      presentation: ['Present separately', 'Insurance Contract Assets & Liabilities', 'Reinsurance Contract Assets & Liabilities'],
+      presentation1: ['insurance service result', 'insurance finance income or expenses'],
+      presentation2: ['an entity is entitled', 'Investment Components'],
+      presentation3: ['and their changes', 'direct participation'],
+      disclosure: ['Reconciliation'],
+      disclosure1: ['Judgements'],
+      disclosure2: ['Risk'],
+      disclosure3: ['Biases'],
+      disclosure4: ['Assumptions', 'Inputs'],
+      anyOtherIssue: ['Modification', 'Original', 'New'],
+      anyOtherIssue1: ['derecognise','extinguished'],
+      anyOtherIssue2: ['Sensitivity Analysis'],
+      anyOtherIssue3: ['Credit', 'Liquidity', 'Mitigates'],
+    };
+
+    const enteredText = detailsTextarea.value.toLowerCase();
+
+    // Function to check if any keyword is present in the entered text
+    function checkKeywordPresence(checkbox, keywordArray) {
+      checkbox.checked = keywordArray.some(keyword => enteredText.includes(keyword.toLowerCase()));
+    }
+
+    checkKeywordPresence(checkboxes.definition, keywords.definition);
+    checkKeywordPresence(checkboxes.objective, keywords.objective);
+    checkKeywordPresence(checkboxes.scope, keywords.scope);
+    checkKeywordPresence(checkboxes.scope2, keywords.scope2);
+    checkKeywordPresence(checkboxes.scope3, keywords.scope3);
+    checkKeywordPresence(checkboxes.recognition, keywords.recognition);
+    checkKeywordPresence(checkboxes.recognition2, keywords.recognition2);
+    checkKeywordPresence(checkboxes.recognition3, keywords.recognition3);
+    checkKeywordPresence(checkboxes.measurement, keywords.measurement);
+    checkKeywordPresence(checkboxes.measurement2, keywords.measurement2);
+    checkKeywordPresence(checkboxes.measurement3, keywords.measurement3);
+    checkKeywordPresence(checkboxes.measurement4, keywords.measurement4);
+    checkKeywordPresence(checkboxes.measurement5, keywords.measurement5);
+    checkKeywordPresence(checkboxes.presentation, keywords.presentation);
+    checkKeywordPresence(checkboxes.presentation1, keywords.presentation1);
+    checkKeywordPresence(checkboxes.presentation2, keywords.presentation2);
+    checkKeywordPresence(checkboxes.presentation3, keywords.presentation3);
+    checkKeywordPresence(checkboxes.disclosure, keywords.disclosure);
+    checkKeywordPresence(checkboxes.disclosure1, keywords.disclosure1);
+    checkKeywordPresence(checkboxes.disclosure2, keywords.disclosure2);
+    checkKeywordPresence(checkboxes.disclosure3, keywords.disclosure3);
+    checkKeywordPresence(checkboxes.disclosure4, keywords.disclosure4);
+    checkKeywordPresence(checkboxes.anyOtherIssue, keywords.anyOtherIssue);
+    checkKeywordPresence(checkboxes.anyOtherIssue1, keywords.anyOtherIssue1);
+    checkKeywordPresence(checkboxes.anyOtherIssue2, keywords.anyOtherIssue2);
+    checkKeywordPresence(checkboxes.anyOtherIssue3, keywords.anyOtherIssue3);
+  }
+</script>
+
+
+<style>
+  /* Add CSS styles for the progress bar */
+  progress {
+    width: 300px;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 4px;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: red; /* Change progress bar color to red */
+    border-radius: 4px;
+  }
+
+  progress::-moz-progress-bar {
+    background-color: red; /* Change progress bar color to red */
+    border-radius: 4px;
+  }
+
+  /* Add CSS styles for the numbers/digits beside the progress bar */
+  .progress-label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+</style>
+
+<script>
+
+ document.addEventListener('DOMContentLoaded', function() {
+    // Progress bar
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const progressBar = document.getElementById('progress-bar2');
+    const progressLabel = document.createElement('span');
+    progressLabel.classList.add('progress-label');
+    progressBar.insertAdjacentElement('afterend', progressLabel);
+    let checkedCount = 0;
+
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+    if (this.checked || this.getAttribute('data-autochecked')) {
+      checkedCount += this.checked ? 1 : -1;
+    }
+    updateProgressBar();
+    updateConclusionField();
+  });
+
+  // Check the initial state of checkboxes
+  if (checkbox.checked || checkbox.getAttribute('data-autochecked')) {
+    checkedCount++;
+  }
+    });
+
+    function updateProgressBar() {
+      let checkedCheckboxCount = 0;
+  checkboxes.forEach(function(checkbox) {
+    if (checkbox.checked || checkbox.getAttribute('data-autochecked')) {
+      checkedCheckboxCount++;
+    }
+  });
+
+  progressBar.value = checkedCheckboxCount;
+  progressBar.max = checkboxes.length;
+  const percentage = (checkedCheckboxCount / checkboxes.length) * 100;
+  progressLabel.textContent = `${checkedCheckboxCount} / ${checkboxes.length} (${percentage.toFixed(2)}%)`;
+    }
+
+    const detailsTextarea = document.getElementById('details-textarea2');
+    detailsTextarea.addEventListener('input', function() {
+      if (this.value.trim().toLowerCase() !== '') {
+        checkedCount++;
+        this.setAttribute('data-autochecked', 'true');
+        this.checked = true; // Check the checkbox
+      } else {
+        checkedCount--;
+        this.removeAttribute('data-autochecked');
+      }
+      updateProgressBar();
+      updateConclusionField();
+    });
+
+    function updateConclusionField() {
+ 
+  const conclusionField = document.getElementById('conclusion-field2');
+  const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  if (checkedCheckboxes.length >= 13) {
+    conclusionField.value = 'IFRS 17 has been correctly applied.';
+  } else {
+    conclusionField.value = 'IFRS 17 has not been correctly applied.';
+  }
+}
+
+    // Set the default value of the conclusion field
+    const conclusionField = document.getElementById('conclusion-field2');
+    conclusionField.value = 'IFRS 17 has not been correctly applied.';
+
+    // Clear form
+    function clearForm() {
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+
+      const textareas = document.querySelectorAll('textarea');
+      textareas.forEach(function(textarea) {
+        textarea.value = '';
+      });
+
+      checkedCount = 0;
+      updateProgressBar();
+      updateConclusionField();
+    }
+
+    // Update progress bar and conclusion field initially
+    updateProgressBar();
+    updateConclusionField();
+  });
+</script>
+
+<script>
+<keyword-field id="keyword-field">
+keyword-field = ['Accepts', 'Uncertain', 'Compensation',
+'Faithfully', 'Represents', 'Transfer',
+'Insurance Policy Contracts','Insurance Contracts with their transfers',
+'Reinsurance Contracts',
+'Investment contracts', 'features', 'discretionary',
+'Coverage Period', '1st Payment', 'Onerous',
+'Cashflows', 'Systematic', 'Allocate',
+'recoverability', 'Impairment', 'apparant',
+'fulfilment cash flows','Time value of money', 'contractual service margin', 'non-financial risk',
+'Estimate', 'Expected values', 'Discount Rates',
+'remaining Coverage', 'Incurred Claims',
+'produce a result similar', 'Premium Allocation',
+'subsequently measure',
+'Present separately', 'Insurance Contract Assets & Liabilities', 'Reinsurance Contract Assets & Liabilities',
+'insurance service result', 'insurance finance income or expenses',
+'an entity is entitled', 'Investment Components',
+'and their changes', 'direct participation',
+'Reconciliation',
+'Judgements',
+'Risk',
+'Biases',
+'Assumptions', 'Inputs',
+'Modification', 'Original', 'New',
+'derecognise','extinguished',
+'Sensitivity Analysis',
+'Credit', 'Liquidity', 'Mitigates']
+ 
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = [
+        {
+          id: 'IFRS2Definition-checkbox-1',
+          keywords: ['Accepts', 'Uncertain', 'Compensation']
+        },
+        {
+          id: 'IFRS2Objective-checkbox-1',
+          keywords: ['Faithfully', 'Represents', 'Transfer']
+        },
+        {
+          id: 'IFRS2Scope-checkbox-1',
+          keywords: [ 'Insurance Policy Contracts','Insurance Contracts with their transfers']
+        },
+        {
+          id: 'IFRS2Scope2-checkbox-2',
+          keywords: ['Reinsurance Contracts']
+        },
+        {
+          id: 'IFRS2Scope3-checkbox-2',
+          keywords: ['Investment contracts', 'features', 'discretionary']
+        },
+        {
+          id: 'IFRS2Recognition-checkbox-3',
+          keywords: ['Coverage Period', '1st Payment', 'Onerous']
+        },
+        {
+          id: 'IFRS2Recognition2-checkbox-4',
+          keywords: ['Cashflows', 'Systematic', 'Allocate']
+        },
+        {
+          id: 'IFRS2Recognition3-checkbox-4',
+          keywords: ['recoverability', 'Impairment', 'apparant']
+        },
+        {
+          id: 'IFRS2Measurement-checkbox-2',
+          keywords: ['fulfilment cash flows','Time value of money', 'contractual service margin', 'non-financial risk']
+        },
+        {
+          id: 'IFRS2Measurement2-checkbox-3',
+          keywords: ['Estimate', 'Expected values', 'Discount Rates']
+        },
+        {
+          id: 'IFRS2Measurement3-checkbox-3',
+          keywords: ['remaining Coverage', 'Incurred Claims']
+        },
+        {
+          id: 'IFRS2Measurement4-checkbox-3',
+          keywords: ['produce a result similar', 'Premium Allocation']
+        },
+        {
+          id: 'IFRS2Measurement5-checkbox-3',
+          keywords: ['subsequently measure']
+        },
+        {
+          id: 'IFRS2Presentation-checkbox-2',
+          keywords: ['Present separately', 'Insurance Contract Assets & Liabilities', 'Reinsurance Contract Assets & Liabilities']
+        },
+        {
+          id: 'IFRS2Presentation1-checkbox-5',
+          keywords: ['insurance service result', 'insurance finance income or expenses']
+        },
+        {
+          id: 'IFRS2Presentation2-checkbox-6',
+          keywords: ['an entity is entitled', 'Investment Components']
+        },
+        {
+          id: 'IFRS2Presentation3-checkbox-7',
+          keywords: ['and their changes', 'direct participation']
+        },
+        {
+          id: 'IFRS2Disclosure-checkbox-2',
+          keywords: ['Reconciliation']
+        },
+        {
+          id: 'IFRS2Disclosure1-checkbox-9',
+          keywords: ['Judgements']
+        },
+        {
+          id: 'IFRS2Disclosure2-checkbox-8',
+          keywords: ['Risk']
+        },
+        {
+         id: 'IFRS2Disclosure3-checkbox-10',
+          keywords: ['Biases']
+        },
+
+       {
+         id: 'IFRS2Disclosure4-checkbox-10',
+          keywords: ['Assumptions','Inputs']
+
+        },
+
+        {   
+         id: 'IFRS2AnyOtherIssue-checkbox-2',
+          keywords: ['Modification', 'Original', 'New']
+
+        },
+
+       {   
+         id: 'IFRS2AnyOtherIssue1-checkbox-2',
+          keywords: ['derecognise', 'extinguished']
+
+        },
+
+       {   
+         id: 'IFRS2AnyOtherIssue2-checkbox-2',
+          keywords: ['Sensitivity Analysis']
+
+        },
+        
+        {   
+         id: 'IFRS2AnyOtherIssue3-checkbox-2',
+          keywords: ['Credit','Liquidity','Mitigates']
+
+        },
+     
+      ];
+
+      const detailsTextarea = document.getElementById('details-textarea2');
+  const progressBar = document.getElementById('progress-bar2'); // Update ID to match the HTML element
+  const progressLabel = document.querySelector('.progress-label'); // Update selector to match the HTML element
+  const conclusionField = document.getElementById('conclusion-field2'); // Update ID to match the HTML element
+  let checkedCount = 0;
+  let checkedKeywords = new Set();
+
+  checkboxes.forEach(function(checkbox) {
+    const { id } = checkbox;
+    const checkboxElement = document.getElementById(id);
+
+    checkboxElement.addEventListener('change', function() {
+      const keyword = checkbox.keywords[0]; // Assuming only one keyword per checkbox
+
+      if (this.checked) {
+        checkedKeywords.add(keyword);
+        checkedCount++;
+      } else {
+        checkedKeywords.delete(keyword);
+        checkedCount--;
+      }
+
+      const progressPercentage = Math.min(Math.round((checkedCount / checkboxes.length) * 100), 100);
+      progressBar.value = checkedCount;
+      progressBar.max = checkboxes.length;
+      progressLabel.textContent = `${checkedCount} / ${checkboxes.length} (${progressPercentage.toFixed(2)}%)`;
+
+      updateConclusion();
+    });
+  });
+
+  function updateConclusion() {
+    if (checkedCount >= 13) {
+      conclusionField.value = 'IFRS 17 has been correctly applied.';
+    } else {
+      conclusionField.value = 'IFRS 17 has not been correctly applied.';
+    }
+  }
+
+  detailsTextarea.addEventListener('input', function() {
+    const enteredText = this.value.toLowerCase();
+
+    checkboxes.forEach(function(checkbox) {
+      const { id } = checkbox;
+      const checkboxElement = document.getElementById(id);
+
+      const matchedKeywords = checkbox.keywords.filter(function(keyword) {
+        return enteredText.includes(keyword.toLowerCase());
+      });
+
+      if (matchedKeywords.length > 0) {
+        checkboxElement.checked = true;
+        checkedKeywords.add(matchedKeywords[0]);
+      } else {
+        checkboxElement.checked = false;
+        checkedKeywords.delete(checkbox.keywords[0]);
+      }
+    });
+
+    checkedCount = checkedKeywords.size;
+
+    const progressPercentage = Math.min(Math.round((checkedCount / checkboxes.length) * 100), 100);
+    progressBar.value = checkedCount;
+    progressBar.max = checkboxes.length;
+    progressLabel.textContent = `${checkedCount} / ${checkboxes.length} (${progressPercentage.toFixed(2)}%)`;
+
+    updateConclusion();
+  });
+});
+  </script>
+
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    evt.preventDefault(); // Prevent form submission
+    
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+</form>
+
+</body>
+</html>
